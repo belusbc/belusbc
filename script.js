@@ -116,7 +116,8 @@ function sendSMS() {
     const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
     const bodyText = `[벨루스톤 체험문의]\n이름: ${name}\n연락처: ${phone}\n내용: ${message}`;
-    window.location.href = `sms:01036505955?body=${encodeURIComponent(bodyText)}`;
+    
+    sendCrossPlatformSMS('01036505955', bodyText);
 }
 
 // SMS 발송 기능 (대리점 문의)
@@ -125,8 +126,27 @@ function sendAgencySMS() {
     const phone = document.getElementById('agencyPhone').value;
     const message = document.getElementById('agencyMessage').value;
     const bodyText = `[벨루스톤 대리점 문의]\n상호명/이름: ${name}\n연락처: ${phone}\n내용: ${message}`;
-    window.location.href = `sms:01036505955?body=${encodeURIComponent(bodyText)}`;
+    
+    sendCrossPlatformSMS('01036505955', bodyText);
     
     // 모달 닫기
+    const agencyModal = document.getElementById('franchiseModal');
+    if(agencyModal) {
+        agencyModal.style.display = 'none';
+    }
+}
+
+// OS에 맞는 SMS 링크 생성 헬퍼 함수
+function sendCrossPlatformSMS(phoneNumber, bodyText) {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const encodedBody = encodeURIComponent(bodyText);
+    
+    // iOS는 '&'를 사용하고 Android는 '?'를 사용하는 경향이 있습니다 (버전에 따라 다름).
+    if (isIOS) {
+        window.location.href = `sms:${phoneNumber}&body=${encodedBody}`;
+    } else {
+        window.location.href = `sms:${phoneNumber}?body=${encodedBody}`;
+    }
+}
     document.getElementById('agencyModal').classList.remove('show');
 }
