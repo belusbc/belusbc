@@ -935,29 +935,29 @@ footer {
 /* --- Floating Button & Modal --- */
 .floating-btn {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 30px;
+    right: 30px;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 20px 35px;
-    border-radius: 40px;
-    font-size: 1.5rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
     font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(26, 54, 93, 0.5);
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.4);
     z-index: 1000;
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 .floating-btn i {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 .floating-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(26, 54, 93, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26, 54, 93, 0.6);
 }
 
 .modal {
@@ -1020,52 +1020,52 @@ footer {
 }
 @media (max-width: 768px) {
     .floating-btn {
-        bottom: 25px;
-        right: 25px;
-        padding: 15px 25px;
-        font-size: 1.2rem;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 1rem;
     }
     .floating-btn i {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 }
 
 /* --- Kakao Floating Button --- */
 .floating-btn-kakao {
     position: fixed;
-    bottom: 110px;
-    right: 40px;
+    bottom: 85px;
+    right: 30px;
     background-color: #FEE500;
     color: #3C1E1E;
     border: none;
-    padding: 20px 35px;
-    border-radius: 40px;
-    font-size: 1.5rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
     font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(254, 229, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(254, 229, 0, 0.3);
     z-index: 1000;
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 .floating-btn-kakao i {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 .floating-btn-kakao:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(254, 229, 0, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(254, 229, 0, 0.5);
 }
 @media (max-width: 768px) {
     .floating-btn-kakao {
-        bottom: 95px;
-        right: 25px;
-        padding: 15px 25px;
-        font-size: 1.2rem;
+        bottom: 70px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 1rem;
     }
     .floating-btn-kakao i {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 }
 
