@@ -148,5 +148,3 @@ function sendCrossPlatformSMS(phoneNumber, bodyText) {
         window.location.href = `sms:${phoneNumber}?body=${encodedBody}`;
     }
 }
-    document.getElementById('agencyModal').classList.remove('show');
-}
