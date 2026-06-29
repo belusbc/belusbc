@@ -123,11 +123,23 @@ header.scrolled {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.8rem;
     font-weight: 800;
     color: white;
     transition: var(--transition-smooth);
     letter-spacing: 1px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white; /* Make it pop against blue nav */
+    padding: 2px;
 }
 
 .logo span {
@@ -419,9 +431,22 @@ footer {
 }
 
 .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 15px;
+}
+
+.footer-logo-img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white;
+    padding: 2px;
 }
 
 .footer-logo span {
