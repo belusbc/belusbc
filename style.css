@@ -1030,4 +1030,43 @@ footer {
     }
 }
 
+/* --- Kakao Floating Button --- */
+.floating-btn-kakao {
+    position: fixed;
+    bottom: 110px;
+    right: 40px;
+    background-color: #FEE500;
+    color: #3C1E1E;
+    border: none;
+    padding: 20px 35px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(254, 229, 0, 0.4);
+    z-index: 1000;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.floating-btn-kakao i {
+    font-size: 1.8rem;
+}
+.floating-btn-kakao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(254, 229, 0, 0.6);
+}
+@media (max-width: 768px) {
+    .floating-btn-kakao {
+        bottom: 95px;
+        right: 25px;
+        padding: 15px 25px;
+        font-size: 1.2rem;
+    }
+    .floating-btn-kakao i {
+        font-size: 1.4rem;
+    }
+}
+
 
