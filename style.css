@@ -707,6 +707,188 @@ footer {
     .location-section {
         grid-template-columns: 1fr;
     }
+
+/* --- Page Specific Styles --- */
+.page-products header.scrolled-always {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+.page-products header.scrolled-always .logo {
+    color: var(--primary-color);
+}
+.page-products header.scrolled-always .nav-links a {
+    color: var(--text-main);
+}
+.page-products header.scrolled-always .nav-links a:hover,
+.page-products header.scrolled-always .nav-links a.active {
+    color: var(--primary-color);
+}
+.page-products header.scrolled-always .mobile-menu-btn {
+    color: var(--primary-color);
+}
+
+.page-header {
+    padding: 150px 0 80px;
+    text-align: center;
+    border-bottom: 1px solid #E2E8F0;
+}
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+/* Gallery Grid System */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force perfect square (1:1 ratio) */
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop gracefully to fill the square */
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Premium Hover Effect */
+.gallery-item:hover {
+    box-shadow: 0 20px 40px rgba(49, 130, 206, 0.15);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08); /* Slight zoom in on hover */
+}
+
+/* Fallback for broken images (if needed before upload) */
+.gallery-item::before {
+    content: '\f03e'; /* FontAwesome image icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #CBD5E0;
+    z-index: -1;
+}
+
+/* Responsive adjustments for gallery */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- About Section Store Gallery & Map --- */
+.mt-50 {
+    margin-top: 50px;
+}
+
+.store-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-item-small {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item-small:hover img {
+    transform: scale(1.05);
+}
+
+.location-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: #F8FAFC;
+    padding: 40px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.location-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.location-info p {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.btn-naver-map {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #03C75A; /* Naver Green */
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(3, 199, 90, 0.3);
+}
+
+.btn-naver-map:hover {
+    background-color: #02b350;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(3, 199, 90, 0.4);
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+    .location-section {
+        grid-template-columns: 1fr;
+    }
     .map-container {
         height: 250px;
     }
@@ -715,26 +897,29 @@ footer {
 /* --- Floating Button & Modal --- */
 .floating-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 40px;
+    right: 40px;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 15px 25px;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    font-weight: 700;
+    padding: 20px 35px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+    box-shadow: 0 10px 25px rgba(26, 54, 93, 0.5);
     z-index: 1000;
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+}
+.floating-btn i {
+    font-size: 1.8rem;
 }
 .floating-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(26, 54, 93, 0.6);
+    box-shadow: 0 15px 30px rgba(26, 54, 93, 0.7);
 }
 
 .modal {
@@ -790,9 +975,12 @@ footer {
 }
 @media (max-width: 768px) {
     .floating-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        font-size: 1rem;
+        bottom: 25px;
+        right: 25px;
+        padding: 15px 25px;
+        font-size: 1.2rem;
+    }
+    .floating-btn i {
+        font-size: 1.4rem;
     }
 }
