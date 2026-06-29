@@ -713,8 +713,6 @@ footer {
 }
 
 .btn-naver-map:hover {
-
-.btn-naver-map:hover {
     background-color: #02b350;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(3, 199, 90, 0.4);
@@ -1013,4 +1011,5 @@ footer {
         font-size: 1.4rem;
     }
 }
+
 
