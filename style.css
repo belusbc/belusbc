@@ -135,7 +135,7 @@ header.scrolled {
 
 .logo-img {
     height: 45px;
-    width: auto;
+    width: 45px;
     object-fit: contain;
     border-radius: 50%;
     background-color: white; /* Make it pop against blue nav */
@@ -442,7 +442,7 @@ footer {
 
 .footer-logo-img {
     height: 35px;
-    width: auto;
+    width: 35px;
     object-fit: contain;
     border-radius: 50%;
     background-color: white;
