@@ -87,3 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// SMS 발송 기능 (고객 스마트폰의 문자 앱 호출)
+function sendSMS() {
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    
+    // 문자에 자동으로 채워질 내용 구성
+    const bodyText = `[벨루스톤 체험문의]\n이름: ${name}\n연락처: ${phone}\n내용: ${message}`;
+    
+    // 안드로이드/아이폰 호환을 위해 텍스트 인코딩
+    const encodedBody = encodeURIComponent(bodyText);
+    
+    // 사장님 번호로 문자앱 호출 (010-3650-5955)
+    // 기기에 따라 ?body= 또는 &body= 를 사용하지만 최신 표준인 ?body= 사용
+    const smsLink = `sms:01036505955?body=${encodedBody}`;
+    
+    // 문자 앱 실행
+    window.location.href = smsLink;
+}

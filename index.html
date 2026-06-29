@@ -140,7 +140,7 @@
                     <p><i class="fas fa-phone-alt"></i> 010-3650-5955</p>
                     <p><i class="fas fa-clock"></i> AM 10:00 - PM 09:00 (일요일 휴무)</p>
                 </div>
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('문의가 접수되었습니다.');">
+                <form class="contact-form" onsubmit="event.preventDefault(); sendSMS();">
                     <div class="form-group">
                         <input type="text" id="name" placeholder="이름 (Name)" required>
                     </div>
@@ -150,7 +150,7 @@
                     <div class="form-group">
                         <textarea id="message" rows="4" placeholder="문의 내용이나 희망 체험 일자를 적어주세요." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary w-100">문의하기 (Submit)</button>
+                    <button type="submit" class="btn-primary w-100">문자로 문의하기 (SMS)</button>
                 </form>
             </div>
         </div>
