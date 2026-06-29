@@ -86,24 +86,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Modal Logic
+    const floatingBtn = document.getElementById('floatingBtn');
+    const modal = document.getElementById('agencyModal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    if(floatingBtn && modal && closeBtn) {
+        floatingBtn.addEventListener('click', () => {
+            modal.classList.add('show');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+    }
 });
 
-// SMS 발송 기능 (고객 스마트폰의 문자 앱 호출)
+// SMS 발송 기능 (체험 문의)
 function sendSMS() {
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
-    
-    // 문자에 자동으로 채워질 내용 구성
     const bodyText = `[벨루스톤 체험문의]\n이름: ${name}\n연락처: ${phone}\n내용: ${message}`;
+    window.location.href = `sms:01036505955?body=${encodeURIComponent(bodyText)}`;
+}
+
+// SMS 발송 기능 (대리점 문의)
+function sendAgencySMS() {
+    const name = document.getElementById('agencyName').value;
+    const phone = document.getElementById('agencyPhone').value;
+    const message = document.getElementById('agencyMessage').value;
+    const bodyText = `[벨루스톤 대리점 문의]\n상호명/이름: ${name}\n연락처: ${phone}\n내용: ${message}`;
+    window.location.href = `sms:01036505955?body=${encodeURIComponent(bodyText)}`;
     
-    // 안드로이드/아이폰 호환을 위해 텍스트 인코딩
-    const encodedBody = encodeURIComponent(bodyText);
-    
-    // 사장님 번호로 문자앱 호출 (010-3650-5955)
-    // 기기에 따라 ?body= 또는 &body= 를 사용하지만 최신 표준인 ?body= 사용
-    const smsLink = `sms:01036505955?body=${encodedBody}`;
-    
-    // 문자 앱 실행
-    window.location.href = smsLink;
+    // 모달 닫기
+    document.getElementById('agencyModal').classList.remove('show');
 }
