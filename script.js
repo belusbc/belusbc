@@ -87,17 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Modal Logic
-    const floatingBtn = document.getElementById('floatingBtn');
+    // 5. Modal Logic (Auto Popup)
     const modal = document.getElementById('agencyModal');
     const closeBtn = document.querySelector('.close-btn');
 
-    if(floatingBtn && modal && closeBtn) {
-        floatingBtn.addEventListener('click', () => {
+    if (modal && closeBtn) {
+        // Show modal automatically after 500ms
+        setTimeout(() => {
             modal.classList.add('show');
-        });
+        }, 500);
 
-        closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior if inside a tag
             modal.classList.remove('show');
         });
 
