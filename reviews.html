@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체험후기 | 벨루스톤카페 부천점</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reviews-section { padding: 150px 0 100px; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .review-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(49, 130, 206, 0.15); }
+        .stars { color: #F59E0B; margin-bottom: 15px; }
+        .reviewer-info { display: flex; align-items: center; margin-top: 20px; border-top: 1px solid #E2E8F0; padding-top: 20px; }
+        .reviewer-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; font-size: 1.2rem; }
+    </style>
+</head>
+<body class="page-products">
+    <!-- Header -->
+    <header id="header" class="scrolled-always">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="벨루스톤카페 로고" class="logo-img">
+                벨루스톤카페 <span>부천점</span>
+            </a>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="products.html">Products</a>
+                <a href="reviews.html" class="active">Reviews</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section bg-light">
+        <div class="container">
+            <div class="section-title text-center fade-in-section" style="margin-bottom: 50px;">
+                <h2>고객 체험 후기</h2>
+                <p>벨루스톤 부천점을 다녀가신 고객님들의 생생한 후기입니다.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card fade-in-section">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #2D3748;">어깨 결림이 싹 사라졌어요!</h3>
+                    <p style="color: var(--text-main); line-height: 1.6;">매일 컴퓨터 앞에 앉아 있다 보니 목과 어깨가 항상 뭉쳐있었는데, 스톤 테라피를 받고 나서 몸이 깃털처럼 가벼워졌습니다. 분위기도 너무 편안해서 제대로 힐링하고 가네요.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">김</div>
+                        <div>
+                            <h4 style="font-size: 1rem; margin: 0; color: #2D3748;">김지* 고객님</h4>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">스페셜 스톤 테라피 체험</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card fade-in-section">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #2D3748;">피부가 맑아진 느낌이에요</h3>
+                    <p style="color: var(--text-main); line-height: 1.6;">건조했던 피부가 EWG 그린 코스메틱 관리 후 촉촉하고 맑아졌습니다. 자극적인 화학 성분이 없다는 게 피부로 바로 느껴져서 정말 만족스럽습니다. 다음 주에 또 방문할 예정입니다.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">이</div>
+                        <div>
+                            <h4 style="font-size: 1rem; margin: 0; color: #2D3748;">이수* 고객님</h4>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">EWG 코스메틱 케어 체험</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card fade-in-section">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #2D3748;">도심 속 진정한 오아시스</h3>
+                    <p style="color: var(--text-main); line-height: 1.6;">퇴근 후 잠깐 들러서 피로를 풀기에 완벽한 장소입니다. 이너뷰티 헬시푸드도 너무 맛있고 건강해지는 기분이었어요. 바쁜 일상 속 휴식이 필요할 때 최고입니다.</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">박</div>
+                        <div>
+                            <h4 style="font-size: 1rem; margin: 0; color: #2D3748;">박민* 고객님</h4>
+                            <span style="font-size: 0.9rem; color: var(--text-light);">이너뷰티 패키지 체험</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="벨루스톤카페 로고" class="footer-logo-img">
+                벨루스톤카페 <span>부천점</span>
+            </div>
+            <p class="copyright">&copy; 2026 Belustone Healing Cafe Bucheon. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
